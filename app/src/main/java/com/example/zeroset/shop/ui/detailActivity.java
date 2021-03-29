@@ -1,4 +1,4 @@
-package com.example.zeroset;
+package com.example.zeroset.shop.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.zeroset.R;
 import com.example.zeroset.shop.model.Review;
 import com.example.zeroset.shop.ui.adapter.ReviewListAdapter;
 
