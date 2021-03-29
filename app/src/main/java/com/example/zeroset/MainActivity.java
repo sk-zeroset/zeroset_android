@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.zeroset.shop.ui.contentsFragment;
-import com.example.zeroset.shop.ui.detailFragment;
-import com.example.zeroset.shop.ui.homeFragment;
-import com.example.zeroset.shop.ui.myPageFragment;
+import com.example.zeroset.contents.ui.contentsFragment;
+import com.example.zeroset.shop.ui.shopFragment;
+import com.example.zeroset.home.ui.homeFragment;
+import com.example.zeroset.mypage.ui.myPageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     homeFragment homeFragment;
-    detailFragment detailFragment;
+    shopFragment detailFragment;
     contentsFragment contentsFragment;
     myPageFragment myPageFragment;
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.bottom_shop:
                     if (detailFragment == null) {
-                       detailFragment = new detailFragment();
+                       detailFragment = new shopFragment();
                         getSupportFragmentManager().beginTransaction().add(R.id.container, detailFragment).commit();
                     }
                     if (detailFragment != null) getSupportFragmentManager().beginTransaction().show(detailFragment).commit();

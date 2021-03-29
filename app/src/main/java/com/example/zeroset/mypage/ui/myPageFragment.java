@@ -1,4 +1,4 @@
-package com.example.zeroset.shop.ui;
+package com.example.zeroset.mypage.ui;
 
 import android.os.Bundle;
 

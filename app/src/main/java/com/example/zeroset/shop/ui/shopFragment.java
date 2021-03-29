@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,28 +11,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.zeroset.R;
-import com.example.zeroset.detailActivity;
-import com.example.zeroset.shop.model.Review;
-import com.example.zeroset.shop.ui.adapter.ReviewListAdapter;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link detailFragment#newInstance} factory method to
+ * Use the {@link shopFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class detailFragment extends Fragment {
+public class shopFragment extends Fragment {
 
     Button button;
 
-    public detailFragment() {
+    public shopFragment() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static detailFragment newInstance(String param1, String param2) {
-        detailFragment fragment = new detailFragment();
+    public static shopFragment newInstance(String param1, String param2) {
+        shopFragment fragment = new shopFragment();
         return fragment;
     }
 
