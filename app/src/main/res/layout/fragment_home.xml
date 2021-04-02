@@ -1,14 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zeroset.home.ui.homeFragment">
+    android:fitsSystemWindows="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fitsSystemWindows="true">
 
-</FrameLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/htab_collapse_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="18dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/btn_back" />
+
+                    <ImageButton
+                        android:id="@+id/btn_cart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="23dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintEnd_toStartOf="@id/btn_search"
+                        app:layout_constraintTop_toTopOf="@id/btn_back"
+                        app:srcCompat="@drawable/btn_cart" />
+
+                    <ImageButton
+                        android:id="@+id/btn_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="26dp"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/btn_cart"
+                        app:srcCompat="@drawable/btn_search" />
+
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/silder_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#EFEEF5"
+                        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="원주 대나무 샴푸"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/btn_back"
+                        app:layout_constraintTop_toBottomOf="@id/silder_image" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8.25dp"
+                        android:isIndicator="true"
+                        android:rating="4.5"
+                        app:layout_constraintStart_toStartOf="@+id/product_name"
+                        app:layout_constraintTop_toBottomOf="@+id/product_name" />
+
+                    <TextView
+                        android:id="@+id/ratingBar_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.25dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="(4.5)"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                        app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+                    <TextView
+                        android:id="@+id/price_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13.5dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:text="217,000"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        app:layout_constraintStart_toStartOf="@id/ratingBar"
+                        app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/price_label"
+                        app:layout_constraintStart_toEndOf="@id/price_label"
+                        app:layout_constraintTop_toTopOf="@id/price_label" />
+
+                    <LinearLayout
+                        android:id="@+id/own_badge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/price_label">
+
+                        <TextView
+                            android:id="@+id/recylce_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="24dp"
+                            android:background="#D1D1D6"
+                            android:fontFamily="@font/montserratalternates_light"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="8dp"
+                            android:text="Recycle"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/social_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:background="#D1D1D6"
+                            android:fontFamily="@font/montserratalternates_light"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="8dp"
+                            android:text="social"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/upcycling_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:background="#D1D1D6"
+                            android:fontFamily="@font/montserratalternates_light"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="15dp"
+                            android:paddingBottom="8dp"
+                            android:text="upcycling"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewDivider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F7"
+                        app:layout_constraintTop_toBottomOf="@id/own_badge" />
+
+                    <TextView
+                        android:id="@+id/badges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="보유 뱃지"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="@+id/price_label"
+                        app:layout_constraintTop_toBottomOf="@id/viewDivider1" />
+
+                    <ImageView
+                        android:id="@+id/upcycling_badge_detail"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#C4C4C4"
+                        app:layout_constraintStart_toStartOf="@+id/badges"
+                        app:layout_constraintTop_toBottomOf="@id/badges" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Upcycling"
+                        android:textColor="#57BE7E"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/upcycling_badge_detail"
+                        app:layout_constraintTop_toTopOf="@id/upcycling_badge_detail" />
+
+                    <ImageView
+                        android:id="@+id/social_badge_detail"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#C4C4C4"
+                        app:layout_constraintStart_toStartOf="@+id/badges"
+                        app:layout_constraintTop_toBottomOf="@id/upcycling_badge_detail" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Social"
+                        android:textColor="#FF6465"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/social_badge_detail"
+                        app:layout_constraintTop_toTopOf="@id/social_badge_detail" />
+
+                    <ImageView
+                        android:id="@+id/recycle_badge_detail"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:background="#C4C4C4"
+                        app:layout_constraintStart_toStartOf="@+id/badges"
+                        app:layout_constraintTop_toBottomOf="@id/social_badge_detail" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="Recycling"
+                        android:textColor="#5F9BFF"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/recycle_badge_detail"
+                        app:layout_constraintTop_toTopOf="@id/recycle_badge_detail" />
+
+                    <View
+                        android:id="@+id/viewDivider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginTop="10dp"
+                        android:background="#F2F2F7"
+                        app:layout_constraintTop_toBottomOf="@id/recycle_badge_detail" />
+
+                    <LinearLayout
+                        android:id="@+id/go_to_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/black"
+                        android:paddingLeft="110dp"
+                        android:paddingTop="15dp"
+                        android:paddingRight="100dp"
+                        android:paddingBottom="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewDivider2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="판매 상점 보러가기"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/btn_arrow_next" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/product_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="44dp"
+                        android:text="상품 정보"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/go_to_shop" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@color/black"
+                android:orientation="vertical"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabTextColor="#000000">
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_launcher_foreground">
+
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
