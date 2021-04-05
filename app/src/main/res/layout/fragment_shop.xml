@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".shop.ui.shopFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="320dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="23dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_cart"
+                app:srcCompat="@drawable/btn_search" />
+
+            <ImageButton
+                android:id="@+id/btn_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_search"
+                app:srcCompat="@drawable/btn_cart" />
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:text="카테고리"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_cart" />
+
+            <TextView
+                android:id="@+id/cate1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="생활"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toLeftOf="@id/category"
+                app:layout_constraintTop_toBottomOf="@id/category" />
+
+            <ImageButton
+                android:id="@+id/btn_next1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate1"
+                app:layout_constraintStart_toStartOf="@+id/cate1"
+                app:layout_constraintBottom_toBottomOf="@id/cate1"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="주방"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/cate1"
+                app:layout_constraintLeft_toLeftOf="@id/category"/>
+
+            <ImageButton
+                android:id="@+id/btn_next2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate2"
+                app:layout_constraintStart_toStartOf="@+id/cate2"
+                app:layout_constraintBottom_toBottomOf="@id/cate2"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="뷰티"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/cate2"
+                app:layout_constraintLeft_toLeftOf="@id/category"/>
+
+            <ImageButton
+                android:id="@+id/btn_next3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate3"
+                app:layout_constraintStart_toStartOf="@+id/cate3"
+                app:layout_constraintBottom_toBottomOf="@id/cate3"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="인테리어"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@id/cate3"
+                app:layout_constraintLeft_toLeftOf="@id/category"/>
+
+            <ImageButton
+                android:id="@+id/btn_next4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate4"
+                app:layout_constraintStart_toStartOf="@+id/cate4"
+                app:layout_constraintBottom_toBottomOf="@id/cate4"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate5"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="욕실"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/btn_next1"
+                app:layout_constraintTop_toTopOf="@id/cate1"/>
+
+            <ImageButton
+                android:id="@+id/btn_next5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate5"
+                app:layout_constraintStart_toStartOf="@+id/cate5"
+                app:layout_constraintBottom_toBottomOf="@id/cate5"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate6"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="패션"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/btn_next2"
+                app:layout_constraintTop_toTopOf="@id/cate2"/>
+
+            <ImageButton
+                android:id="@+id/btn_next6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate6"
+                app:layout_constraintStart_toStartOf="@+id/cate6"
+                app:layout_constraintBottom_toBottomOf="@id/cate6"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate7"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="문구/도서"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/btn_next3"
+                app:layout_constraintTop_toTopOf="@id/cate3"/>
+
+            <ImageButton
+                android:id="@+id/btn_next7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="110dp"
+                app:layout_constraintTop_toTopOf="@id/cate7"
+                app:layout_constraintBottom_toBottomOf="@id/cate7"
+                app:layout_constraintRight_toRightOf="@id/btn_next6"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/cate8"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="기타"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/btn_next4"
+                app:layout_constraintTop_toTopOf="@id/cate4"/>
+
+            <ImageButton
+                android:id="@+id/btn_next8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="140dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="@id/cate8"
+                app:layout_constraintStart_toStartOf="@+id/cate8"
+                app:layout_constraintBottom_toBottomOf="@id/cate8"
+                app:srcCompat="@drawable/btn_next" />
+
+            <TextView
+                android:id="@+id/pick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="20dp"
+                android:text="공집합 PICK!"
+                android:textSize="30sp"
+                app:layout_constraintLeft_toLeftOf="@id/category"
+                app:layout_constraintTop_toBottomOf="@id/cate4" />
+
+            <ImageButton
+                android:id="@+id/btn_add_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintRight_toRightOf="@+id/pick"
+                app:layout_constraintTop_toTopOf="@id/pick"
+                app:srcCompat="@drawable/btn_rightpoint" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pick_Image"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="16dp"
+                android:background="#EFEEF5"
+                app:layout_constraintTop_toBottomOf="@id/btn_add_next"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <TextView
+                android:id="@+id/pick_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:text="코가 뚫리는 박하향이 나는 \n대나무 칫솔"
+                android:textSize="25dp"
+                app:layout_constraintTop_toBottomOf="@id/pick_Image"
+                />
+            <Button
+                android:id="@+id/hash_tag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recycle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toLeftOf="@id/pick_Image"
+                app:layout_constraintBottom_toBottomOf="@id/pick_Image"/>
+
+            <Button
+                android:id="@+id/hash_tag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Social"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintLeft_toRightOf="@id/hash_tag1"
+                app:layout_constraintBottom_toBottomOf="@id/pick_Image"/>
+
+            <TextView
+                android:id="@+id/best"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="공집합 BEST"
+                android:textSize="30sp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/pick_info" />
+
+            <ImageButton
+                android:id="@+id/btn_add_next2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/best"
+                app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                app:layout_constraintTop_toTopOf="@id/best"
+                app:srcCompat="@drawable/btn_rightpoint" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="24dp"
+                app:tabMode="scrollable"
+                app:layout_constraintTop_toBottomOf="@id/best">
+                <!-- tabmode : 스크롤 가능하게끔 -->
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="생활" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주방" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="뷰티" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="인테리어" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="욕실" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="패션" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="문구/도서" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타" />
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bestRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="24dp"
+                app:layout_constraintTop_toBottomOf="@id/tab_layout"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
+                android:text="공집합 뱃지별 상품"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@id/bestRecyclerView" />
+
+            <TextView
+                android:id="@+id/recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#Recycle"
+                android:textSize="20sp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/goods" />
+
+            <ImageButton
+                android:id="@+id/re_next"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                app:layout_constraintTop_toTopOf="@id/recycle"
+                app:layout_constraintBottom_toBottomOf="@id/recycle"
+                app:srcCompat="@drawable/btn_rightpoint" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/recycle"
+                android:scrollbars="horizontal"/>
+
+            <TextView
+                android:id="@+id/social"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#Social"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="24dp"
+                app:layout_constraintTop_toBottomOf="@id/recycleRecyclerView" />
+
+            <ImageButton
+                android:id="@+id/re_next2"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                app:layout_constraintTop_toTopOf="@id/social"
+                app:layout_constraintBottom_toBottomOf="@id/social"
+                app:srcCompat="@drawable/btn_rightpoint" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/socialRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintTop_toBottomOf="@id/social"
+                android:scrollbars="horizontal"/>
+
+            <TextView
+                android:id="@+id/eco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#Eco-frnd"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="24dp"
+                app:layout_constraintTop_toBottomOf="@id/socialRecyclerView" />
+
+            <ImageButton
+                android:id="@+id/re_next3"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                app:layout_constraintTop_toTopOf="@id/eco"
+                app:layout_constraintBottom_toBottomOf="@id/eco"
+                app:srcCompat="@drawable/btn_rightpoint" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ecoRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintTop_toBottomOf="@id/eco"
+                android:scrollbars="horizontal"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
