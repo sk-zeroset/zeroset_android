@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.zeroset.MainActivity;
 import com.example.zeroset.R;
 import com.example.zeroset.shop.model.Product;
 import com.example.zeroset.shop.ui.adapter.GridAdapter;
@@ -155,24 +156,22 @@ public class shopFragment extends Fragment {
 
         //생활 텍스트뷰 클릭
         text1 = v.findViewById(R.id.cate1);
-        text1.setOnClickListener(new View.OnClickListener() {
+       /* text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //fragment 간 이동
-                //      ((MainActivity) getActivity()).replaceFragment(into_category1.newInstance());
+                ((MainActivity) getActivity()).replaceFragment(into_category1.newInstance());
             }
-        });
+        });*/
 
 
         btn_re = (ImageButton) v.findViewById(R.id.re_next);
-//        btn_re.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ((MainActivity) getActivity()).replaceFragment(RecycleMainFragment.newInstance());
-//            }
-//        });
-
-
+        btn_re.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).replaceFragment(RecycleMainFragment.newInstance());
+            }
+        });
 
         return v;
     }
