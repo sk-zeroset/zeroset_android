@@ -21,7 +21,6 @@ import com.example.zeroset.shop.ui.adapter.GridAdapter;
 import com.example.zeroset.shop.ui.adapter.LinearAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -156,16 +155,16 @@ public class shopFragment extends Fragment {
 
         //생활 텍스트뷰 클릭
         text1 = v.findViewById(R.id.cate1);
-       /* text1.setOnClickListener(new View.OnClickListener() {
+        text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //fragment 간 이동
-                ((MainActivity) getActivity()).replaceFragment(into_category1.newInstance());
+                ((MainActivity) getActivity()).replaceFragment(intoCategory1Fragment.newInstance());
             }
-        });*/
+        });
 
-
-        btn_re = (ImageButton) v.findViewById(R.id.re_next);
+        //Recycle 뱃지 가는 버튼 클릭
+        btn_re = v.findViewById(R.id.re_next);
         btn_re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -74,8 +74,8 @@
                 android:id="@+id/recycle_des"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintLeft_toLeftOf="@+id/btn_back"
@@ -158,31 +158,36 @@
 
             </com.google.android.material.tabs.TabLayout>
 
-            <ImageButton
-                android:id="@+id/btn_filter"
+            <View
+                android:id="@+id/viewDivider4"
+                android:layout_width="match_parent"
+                android:layout_height="4px"
+                android:layout_weight="1"
+                android:background="#F2F2F7"
+                app:layout_constraintTop_toBottomOf="@id/recycle_tablayout" />
+
+
+            <ImageView
+                android:id="@+id/filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@android:color/transparent"
-                app:srcCompat="@drawable/ic_btn_filter"
-                app:layout_constraintRight_toRightOf="@+id/recycle_downBtn"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recycle_tablayout"
-                tools:ignore="MissingConstraints" />
+                app:srcCompat="@drawable/ic_btn_filter" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/const2"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reycleRecylcerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/btn_filter">
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="24dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintStart_toStartOf="@+id/recycle_tablayout"
+                app:layout_constraintTop_toBottomOf="@id/filter" />
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/recycle_tabfragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/recycle_tabfragment"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
