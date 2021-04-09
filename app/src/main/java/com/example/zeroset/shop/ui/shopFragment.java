@@ -176,42 +176,6 @@ public class shopFragment extends Fragment {
 
             }
         });
-
-        setRecyclerView(recycleRecyclerView, totalProducts); // 리사이클러뷰 뱃지별로 product 교체
-        setRecyclerView(socialRecyclerView, totalProducts);
-        setRecyclerView(ecoRecyclerView, totalProducts);
-
-
-
-        //생활 텍스트뷰 클릭
-        text1 = v.findViewById(R.id.cate1);
-        text1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //fragment 간 이동
-                ((MainActivity) getActivity()).replaceFragment(intoCategory1Fragment.newInstance());
-            }
-        });
-
-        //Recycle 뱃지 가는 버튼 클릭
-        btn_re = v.findViewById(R.id.re_next);
-        btn_re.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(RecycleMainFragment.newInstance());
-            }
-        });
-
-        return v;
-    }
-
-
-    public void setRecyclerView(RecyclerView recyclerView, ArrayList<Product> products) {
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        linearAdapter = new LinearAdapter(products);
-        recyclerView.setAdapter(linearAdapter);
-        recyclerView.setNestedScrollingEnabled(false);
-
     }
 
 }
