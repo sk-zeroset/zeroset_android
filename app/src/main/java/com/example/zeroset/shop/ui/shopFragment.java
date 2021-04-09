@@ -52,6 +52,12 @@ public class shopFragment extends Fragment {
     public shopFragment() {
     }
 
+    public static shopFragment newInstance() {
+        shopFragment fragment = new shopFragment();
+
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,13 +92,13 @@ public class shopFragment extends Fragment {
 
         //생활 텍스트뷰 클릭
         text1 = v.findViewById(R.id.cate1);
-       /* text1.setOnClickListener(new View.OnClickListener() {
+       text1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //fragment 간 이동
-                ((MainActivity) getActivity()).replaceFragment(into_category1.newInstance());
+                ((MainActivity) getActivity()).replaceFragment(intoCategory1Fragment.newInstance());
             }
-        });*/
+        });
 
 
         btn_re = (ImageButton) v.findViewById(R.id.re_next);

@@ -17,7 +17,7 @@ import com.example.zeroset.R;
 import com.example.zeroset.shop.model.Product;
 import com.example.zeroset.shop.model.eventBanner;
 import com.example.zeroset.shop.ui.adapter.GridAdapter;
-import com.example.zeroset.shop.ui.adapter.eventBannerAdapter;
+import com.example.zeroset.shop.ui.adapter.EventBannerAdapter;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,7 @@ public class intoCategory1Fragment extends Fragment {
     RecyclerView cate1Recyclerview;
 
     GridAdapter gridAdapter;
-    eventBannerAdapter eventBannerAdapter;
+    EventBannerAdapter eventBannerAdapter;
 
     public intoCategory1Fragment() {
         // Required empty public constructor
@@ -65,7 +65,7 @@ public class intoCategory1Fragment extends Fragment {
 
         cate1RankBanner = view.findViewById(R.id.cate1RankRecyclerview);
         cate1RankBanner.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)) ;
-        eventBannerAdapter = new eventBannerAdapter(eventBanners, getContext());
+        eventBannerAdapter = new EventBannerAdapter(eventBanners, getContext());
         cate1RankBanner.setAdapter(eventBannerAdapter);
 
         totalProducts = new ArrayList<>();
