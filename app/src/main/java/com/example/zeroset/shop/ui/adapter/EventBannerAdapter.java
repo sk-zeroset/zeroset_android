@@ -16,7 +16,7 @@ import com.example.zeroset.shop.model.eventBanner;
 
 import java.util.ArrayList;
 
-public class eventBannerAdapter extends RecyclerView.Adapter<eventBannerAdapter.ViewHolder> {
+public class EventBannerAdapter extends RecyclerView.Adapter<EventBannerAdapter.ViewHolder> {
 
     private ArrayList<eventBanner> items;
     private TextView textView;
@@ -31,7 +31,7 @@ public class eventBannerAdapter extends RecyclerView.Adapter<eventBannerAdapter.
         }
     }
 
-    public eventBannerAdapter(ArrayList<eventBanner> list, Context context) {
+    public EventBannerAdapter(ArrayList<eventBanner> list, Context context) {
         this.context = context;
         this.items = list;
     }

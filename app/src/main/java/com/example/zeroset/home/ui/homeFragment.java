@@ -10,14 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import com.example.zeroset.R;
 import com.example.zeroset.shop.model.Product;
 import com.example.zeroset.shop.model.eventBanner;
 import com.example.zeroset.shop.ui.adapter.GridAdapter;
-import com.example.zeroset.shop.ui.adapter.eventBannerAdapter;
-import com.google.android.material.tabs.TabItem;
+import com.example.zeroset.shop.ui.adapter.EventBannerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -38,7 +36,7 @@ public class homeFragment extends Fragment {
     RecyclerView productRecyclerView;
 
     GridAdapter gridAdapter;
-    eventBannerAdapter eventBannerAdapter;
+    EventBannerAdapter eventBannerAdapter;
 
     TabLayout tabLayout;
 
@@ -81,7 +79,7 @@ public class homeFragment extends Fragment {
 
         eventRecyclerView = v.findViewById(R.id.recyclerView);
         eventRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)) ;
-        eventBannerAdapter = new eventBannerAdapter(eventBanners, getContext());
+        eventBannerAdapter = new EventBannerAdapter(eventBanners, getContext());
         eventRecyclerView.setAdapter(eventBannerAdapter);
 
         for(Product p: lifeProducts){
