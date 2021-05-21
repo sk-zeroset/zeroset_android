@@ -11,11 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zeroset">
-        <activity android:name=".shop.ui.detailActivity"></activity>
-        <activity android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan"
-
-            >
+        <activity android:name=".search.ui.searchActivity"></activity>
+        <activity
+            android:name=".login.ui.registerActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".login.ui.loginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".shop.ui.detailActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

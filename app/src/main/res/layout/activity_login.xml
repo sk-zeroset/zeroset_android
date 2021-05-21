@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".login.ui.loginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F2F2F2"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="86dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="휴대폰 번호"
+                android:textColorHint="#C9C9C9">
+
+                <EditText
+                    android:id="@+id/number"
+                    android:layout_width="312dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_frame_underline_black"
+                    android:inputType="phone"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pwdf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="비밀 번호"
+                android:textColorHint="#C9C9C9"
+                app:passwordToggleDrawable="@drawable/toggle_selector"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/pwd"
+                    android:layout_width="312dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="53dp"
+                    android:background="@drawable/ic_frame_underline_black"
+                    android:inputType="textPassword"
+                    android:textSize="15sp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/validview"
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_vector_i" />
+
+            <TextView
+                android:id="@+id/checkvalid"
+                android:layout_width="298dp"
+                android:text="해당하는 닉네임"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="#FF0000"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/loginbutton"
+            android:layout_width="312dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="57dp"
+            android:text="로그인"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+        </Button>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginbutton">
+
+            <TextView
+                android:id="@+id/findid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디 찾기   |"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/findpwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   비밀번호 찾기   |"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   회원가입"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

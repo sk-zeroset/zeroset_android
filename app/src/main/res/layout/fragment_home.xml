@@ -1,14 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@null"
     android:layout_height="match_parent"
-    tools:context=".mypage.ui.myPageFragment">
+    android:fitsSystemWindows="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
+
+            <View
+                android:id="@+id/mainview"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#F2F2F2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/foryou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="FORYOU"
+                android:textColor="#000000"
+                android:textSize="28dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainview" />
+
+            <FrameLayout
+                android:id="@+id/firstframe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/foryou">
+
+
+                <View
+                    android:id="@+id/firstimage"
+                    android:layout_width="312dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="24dp"
+                    android:background="#c4c4c4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/recycle_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_recycle"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
+                    app:layout_constraintStart_toStartOf="@+id/firstimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+                <ImageView
+                    android:id="@+id/social_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_social"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
+                    app:layout_constraintStart_toStartOf="@+id/firstimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+                <ImageView
+                    android:id="@+id/eco_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_eco"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
+                    app:layout_constraintStart_toStartOf="@+id/firstimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/firsttext"
+                android:layout_width="292dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="10dp"
+                android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstframe" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/firstrecycler"
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firsttext" />
+
+            <View
+                android:id="@+id/secondimage"
+                android:layout_width="312dp"
+                android:layout_height="350dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:background="#c4c4c4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstrecycler"
+                android:layout_marginLeft="24dp" />
+
+            <TextView
+                android:id="@+id/secondtext"
+                android:layout_width="292dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="10dp"
+                android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondimage" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/secondrecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="13dp"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondtext" />
+
+            <FrameLayout
+                android:id="@+id/thirdframe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secondrecycler">
+
+
+                <View
+                    android:id="@+id/thirdimage"
+                    android:layout_width="312dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="24dp"
+                    android:background="#c4c4c4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/recycle_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_recycle"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
+                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+                <ImageView
+                    android:id="@+id/social_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_social"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
+                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+                <ImageView
+                    android:id="@+id/eco_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="162dp"
+                    app:srcCompat="@drawable/ic_eco"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
+                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
+                    tools:layout_editor_absoluteY="111dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/thirdtext"
+                android:layout_width="292dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="10dp"
+                android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdframe" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/thirdrecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="13dp"
+                android:scrollbars="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdtext" />
+
+            <ImageButton
+                android:id="@+id/btn_down1"
+                android:layout_width="47dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                app:srcCompat="@drawable/btn_downpoint"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdrecycler" />
+
+
+            <LinearLayout
+                android:id="@+id/contentframe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_down1">
+
+                <TextView
+                    android:id="@+id/Today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="TODAY NEWS!"
+                    android:textColor="#000000"
+                    android:textSize="28dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contentrecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="1400dp"
+                    android:overScrollMode="never"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Today" />
+
+                <ImageButton
+                    android:id="@+id/btn_up1"
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="193dp"
+                    android:background="#00000000"
+                    app:srcCompat="@drawable/ic_btn_arrow_up"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            android:layout_height="56dp"
+            android:fitsSystemWindows="true"
+            android:background="@null"
+            app:titleEnabled="false"
+            app:layout_scrollFlags="scroll|snap|enterAlways">
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="364dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/btn_search" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
