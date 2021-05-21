@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.zeroset.contents.ui.contentsFragment;
@@ -16,6 +15,8 @@ import com.example.zeroset.home.ui.homeFragment;
 import com.example.zeroset.mypage.ui.myPageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MainActivity extends AppCompatActivity {
 
     homeFragment homeFragment;
@@ -23,92 +24,74 @@ public class MainActivity extends AppCompatActivity {
     contentsFragment contentsFragment;
     myPageFragment myPageFragment;
 
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
     BottomNavigationView bottomNavigationView;
-    Menu menu;
+
+    //Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        homeFragment = new homeFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-
-
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        menu = bottomNavigationView.getMenu();
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.bottom_home:
+                        setFrag(0);
+                        break;
+                    case R.id.bottom_shop:
+                        setFrag(1);
+                        break;
+                    case R.id.bottom_contents:
+                        setFrag(2);
+                        break;
+                    case R.id.bottom_mypage:
+                        setFrag(3);
+                        break;
+                }
+                return false;
+            }
+        });
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
-        bottomNavigationView.setSelectedItemId(R.id.bottom_home);
+        homeFragment = new homeFragment();
+        detailFragment = new shopFragment();
+        contentsFragment = new contentsFragment();
+        myPageFragment = new myPageFragment();
+
+        setFrag(0); //첫 프래그먼트 화면을 무엇으로 지정해줄 것인지 결정
+    }
+
+    //프래그먼트 교체가 일어나는 실행문이다.
+    private void setFrag(int n) {
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        switch (n) {
+            case 0:
+                fragmentTransaction.replace(R.id.container, homeFragment);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                fragmentTransaction.replace(R.id.container, detailFragment);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                fragmentTransaction.replace(R.id.container, contentsFragment);
+                fragmentTransaction.commit();
+                break;
+            case 3:
+                fragmentTransaction.replace(R.id.container, myPageFragment);
+                fragmentTransaction.commit();
+                break;
+        }
     }
 
     public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment).commit();      // Fragment로 사용할 MainActivity내의 layout공간을 선택합니다.
-    }
-
-    /* 바텀바 선택시 아이콘 토글 */
-    class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.bottom_home:
-                    if (homeFragment != null)  getSupportFragmentManager().beginTransaction().show(homeFragment).commit();
-                    if (detailFragment != null) getSupportFragmentManager().beginTransaction().hide(detailFragment).commit();
-                    if (contentsFragment != null) getSupportFragmentManager().beginTransaction().hide(contentsFragment).commit();
-                    if (myPageFragment != null) getSupportFragmentManager().beginTransaction().hide(myPageFragment).commit();
-                    item.setIcon(R.drawable.btn_bottombar_home_selected);
-                    menu.findItem(R.id.bottom_shop).setIcon(R.drawable.btn_bottombar_shop_unselected);
-                    menu.findItem(R.id.bottom_contents).setIcon(R.drawable.btn_bottombar_contents_unselected);
-                    menu.findItem(R.id.bottom_mypage).setIcon(R.drawable.btn_bottombar_mypage_unselected);
-                    break;
-                case R.id.bottom_shop:
-                    if (detailFragment == null) {
-                       detailFragment = new shopFragment();
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, detailFragment).commit();
-                    }
-                    if (detailFragment != null) getSupportFragmentManager().beginTransaction().show(detailFragment).commit();
-                    if (homeFragment != null) getSupportFragmentManager().beginTransaction().hide(homeFragment).commit();
-                    if (contentsFragment != null) getSupportFragmentManager().beginTransaction().hide(contentsFragment).commit();
-                    if (myPageFragment != null) getSupportFragmentManager().beginTransaction().hide(myPageFragment).commit();
-                    item.setIcon(R.drawable.btn_bottombar_shop_selected);
-                    menu.findItem(R.id.bottom_home).setIcon(R.drawable.btn_bottombar_home_unselected);
-                    menu.findItem(R.id.bottom_contents).setIcon(R.drawable.btn_bottombar_contents_unselected);
-                    menu.findItem(R.id.bottom_mypage).setIcon(R.drawable.btn_bottombar_mypage_unselected);
-                    break;
-                case R.id.bottom_contents:
-                    if (contentsFragment == null) {
-                        contentsFragment = new contentsFragment();
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, contentsFragment).commit();
-                    }
-                    if (contentsFragment != null) getSupportFragmentManager().beginTransaction().show(contentsFragment).commit();
-                    if (detailFragment != null) getSupportFragmentManager().beginTransaction().hide(detailFragment).commit();
-                    if (homeFragment != null) getSupportFragmentManager().beginTransaction().hide(homeFragment).commit();
-                    if (myPageFragment != null) getSupportFragmentManager().beginTransaction().hide(myPageFragment).commit();
-                    item.setIcon(R.drawable.btn_bottombar_shop_selected);
-                    item.setIcon(R.drawable.btn_bottombar_contents_selected);
-                    menu.findItem(R.id.bottom_shop).setIcon(R.drawable.btn_bottombar_shop_unselected);
-                    menu.findItem(R.id.bottom_home).setIcon(R.drawable.btn_bottombar_home_unselected);
-                    menu.findItem(R.id.bottom_mypage).setIcon(R.drawable.btn_bottombar_mypage_unselected);
-                    break;
-                case R.id.bottom_mypage:
-                    if (myPageFragment == null) {
-                        myPageFragment = new myPageFragment();
-                        getSupportFragmentManager().beginTransaction().add(R.id.container, myPageFragment).commit();
-                    }
-                    if (myPageFragment != null) getSupportFragmentManager().beginTransaction().show(myPageFragment).commit();
-                    if (homeFragment != null) getSupportFragmentManager().beginTransaction().hide(homeFragment).commit();
-                    if (contentsFragment != null) getSupportFragmentManager().beginTransaction().hide(contentsFragment).commit();
-                    if (detailFragment != null) getSupportFragmentManager().beginTransaction().hide(detailFragment).commit();
-                    item.setIcon(R.drawable.btn_bottombar_shop_selected);
-                    item.setIcon(R.drawable.btn_bottombar_mypage_selected);
-                    menu.findItem(R.id.bottom_shop).setIcon(R.drawable.btn_bottombar_shop_unselected);
-                    menu.findItem(R.id.bottom_contents).setIcon(R.drawable.btn_bottombar_contents_unselected);
-                    menu.findItem(R.id.bottom_home).setIcon(R.drawable.btn_bottombar_home_unselected);
-                    break;
-            }
-            return true;
-        }
     }
 }

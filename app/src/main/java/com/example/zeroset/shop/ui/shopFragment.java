@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -96,7 +97,11 @@ public class shopFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //fragment 간 이동
-                ((MainActivity) getActivity()).replaceFragment(intoCategory1Fragment.newInstance());
+               // ((MainActivity) getActivity()).replaceFragment(intoCategory1Fragment.newInstance());
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                intoCategory1Fragment intoCategory1Fragment = new intoCategory1Fragment();
+                transaction.replace(R.id.container, intoCategory1Fragment);
+                transaction.commit();
             }
         });
 
@@ -105,7 +110,12 @@ public class shopFragment extends Fragment {
         btn_re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(RecycleMainFragment.newInstance());
+              //  ((MainActivity) getActivity()).replaceFragment(RecycleMainFragment.newInstance());
+
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                RecycleMainFragment recycleMainFragment = new RecycleMainFragment();
+                transaction.replace(R.id.container, recycleMainFragment);
+                transaction.commit();
             }
         });
 
