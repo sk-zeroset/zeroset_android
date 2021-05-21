@@ -1,9 +1,9 @@
 package com.example.zeroset.home.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,18 +14,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.zeroset.MainActivity;
 import com.example.zeroset.R;
 import com.example.zeroset.home.model.Content;
 import com.example.zeroset.home.ui.adapter.ContentBannerAdapter;
-import com.example.zeroset.search.ui.searchFragment;
+import com.example.zeroset.search.ui.searchBarActivity;
 import com.example.zeroset.shop.model.Product;
-import com.example.zeroset.search.ui.searchFragment;
-import com.example.zeroset.shop.model.eventBanner;
-import com.example.zeroset.shop.ui.adapter.GridAdapter;
-import com.example.zeroset.shop.ui.adapter.EventBannerAdapter;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.tabs.TabLayout;
 import com.example.zeroset.home.ui.adapter.LinearAdapter;
 
 import java.util.ArrayList;
@@ -122,7 +116,9 @@ public class homeFragment extends Fragment {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(searchFragment.newInstance());
+                Intent i = new Intent(getActivity().getBaseContext(),
+                        searchBarActivity.class);
+                getActivity().startActivity(i);
             }
         });
 

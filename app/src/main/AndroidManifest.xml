@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zeroset">
-        <activity android:name=".search.ui.searchActivity"></activity>
+        <activity android:name=".search.ui.searchBarActivity"></activity>
+        <activity android:name=".search.ui.searchActivity" />
         <activity
             android:name=".login.ui.registerActivity"
             android:windowSoftInputMode="adjustResize" />
