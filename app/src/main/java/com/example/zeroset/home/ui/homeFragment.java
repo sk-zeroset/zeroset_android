@@ -10,13 +10,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.example.zeroset.MainActivity;
 import com.example.zeroset.R;
+import com.example.zeroset.home.model.Content;
+import com.example.zeroset.home.ui.adapter.ContentBannerAdapter;
+import com.example.zeroset.search.ui.searchFragment;
 import com.example.zeroset.shop.model.Product;
+import com.example.zeroset.search.ui.searchFragment;
 import com.example.zeroset.shop.model.eventBanner;
 import com.example.zeroset.shop.ui.adapter.GridAdapter;
 import com.example.zeroset.shop.ui.adapter.EventBannerAdapter;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
+import com.example.zeroset.home.ui.adapter.LinearAdapter;
 
 import java.util.ArrayList;
 
@@ -26,6 +36,19 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class homeFragment extends Fragment {
+
+    private ImageButton btn_search, btn_down1, btn_up;
+    private int MAX_ITEM_COUNT = 10;
+    private RecyclerView recycler1, recycler2, recycler3, recyclercontents;
+    private TextView txt1, txt2, txt3;
+    private LinearAdapter linearAdapter;
+    private LinearLayout contentframe;
+    private ContentBannerAdapter contentAdapter;
+    private ArrayList<Product> Products1, Products2, Products3;
+    private ArrayList<Content> Contents;
+    private MaterialToolbar bar;
+    private ViewGroup view;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,6 +94,75 @@ public class homeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_home,
+                container, false);
+        setDummyData();
+        recycler1 = v.findViewById(R.id.firstrecycler);
+        recycler2 = v.findViewById(R.id.secondrecycler);
+        recycler3 = v.findViewById(R.id.thirdrecycler);
+        recyclercontents = v.findViewById(R.id.contentrecycler);
+        contentframe = v.findViewById(R.id.contentframe);
+        //resizeContentList(contentframe,5, getActivity());
+
+        setRecyclerView(recycler1, Products1);
+        setRecyclerView(recycler2, Products1);
+        setRecyclerView(recycler3, Products1);
+
+
+        recyclercontents.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        contentAdapter = new ContentBannerAdapter(Contents, 1);
+        recyclercontents.setAdapter(contentAdapter);
+
+        btn_search = v.findViewById(R.id.btn_search);
+        btn_down1 = v.findViewById(R.id.btn_down1);
+        btn_up = v.findViewById(R.id.btn_up1);
+
+
+
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).replaceFragment(searchFragment.newInstance());
+            }
+        });
+
+        btn_down1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contentframe.setVisibility(View.VISIBLE);
+            }
+        });
+
+
+        btn_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contentframe.setVisibility(View.GONE);
+            }
+        });
+
+        return v;
     }
+
+    public void setDummyData() {
+
+        Products1 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            Products1.add(new Product("공집합", "원주대나무", "20,000"));
+        }
+
+        Contents = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", 1));
+        }
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView, ArrayList<Product> products) {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        linearAdapter = new LinearAdapter(products);
+        recyclerView.setAdapter(linearAdapter);
+    }
+
+
+
 }
