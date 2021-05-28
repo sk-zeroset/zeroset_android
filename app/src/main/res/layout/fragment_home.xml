@@ -47,7 +47,7 @@
                 android:id="@+id/firstframe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/foryou">
 
@@ -61,41 +61,56 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/recycle_1"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginLeft="34dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_recycle"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
-                    app:layout_constraintStart_toStartOf="@+id/firstimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/social_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_social"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
-                    app:layout_constraintStart_toStartOf="@+id/firstimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    <ImageView
+                        android:id="@+id/recycle_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="165dp"
+                        android:layout_marginBottom="2dp"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_recycle"
+                        tools:layout_editor_absoluteY="111dp" />
 
-                <ImageView
-                    android:id="@+id/eco_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="175dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_eco"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/firstimage"
-                    app:layout_constraintStart_toStartOf="@+id/firstimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    <ImageView
+                        android:id="@+id/social_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/recycle_1"
+                        android:layout_toRightOf="@+id/recycle_1"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_social"
+                        tools:layout_editor_absoluteY="111dp" />
+
+                    <ImageView
+                        android:id="@+id/eco_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_toEndOf="@+id/social_1"
+                        android:layout_toRightOf="@+id/social_1"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_eco"
+                        tools:layout_editor_absoluteY="111dp" />
+
+                </RelativeLayout>
 
             </FrameLayout>
 
@@ -107,6 +122,7 @@
                 android:layout_marginTop="10dp"
                 android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/firstframe" />
@@ -140,6 +156,7 @@
                 android:layout_marginTop="10dp"
                 android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/secondimage" />
@@ -172,41 +189,56 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/recycle_3"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginLeft="34dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_recycle"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
-                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/social_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="110dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_social"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
-                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    <ImageView
+                        android:id="@+id/recycle_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="165dp"
+                        android:layout_marginBottom="2dp"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_recycle"
+                        tools:layout_editor_absoluteY="111dp" />
 
-                <ImageView
-                    android:id="@+id/eco_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="175dp"
-                    android:layout_marginTop="162dp"
-                    app:srcCompat="@drawable/ic_eco"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="@+id/thirdimage"
-                    app:layout_constraintStart_toStartOf="@+id/thirdimage"
-                    tools:layout_editor_absoluteY="111dp" />
+                    <ImageView
+                        android:id="@+id/social_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toEndOf="@+id/recycle_3"
+                        android:layout_toRightOf="@+id/recycle_3"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_social"
+                        tools:layout_editor_absoluteY="111dp" />
+
+                    <ImageView
+                        android:id="@+id/eco_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="162dp"
+                        android:layout_marginBottom="1dp"
+                        android:layout_toEndOf="@+id/social_3"
+                        android:layout_toRightOf="@+id/social_3"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_eco"
+                        tools:layout_editor_absoluteY="111dp" />
+
+                </RelativeLayout>
 
             </FrameLayout>
 
@@ -219,6 +251,7 @@
                 android:text="코가 뚫리는 박하향이 나는\n 대나무 칫솔"
                 android:textColor="@color/black"
                 android:textSize="20dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/thirdframe" />
 
@@ -238,7 +271,7 @@
                 android:layout_height="47dp"
                 android:layout_marginTop="30dp"
                 android:background="#00000000"
-                app:srcCompat="@drawable/btn_downpoint"
+                app:srcCompat="@drawable/ic_btn_big_arrow_bottom"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -260,6 +293,7 @@
                     android:id="@+id/Today"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
                     android:layout_marginLeft="24dp"
                     android:fontFamily="@font/montserrat_regular"
                     android:text="TODAY NEWS!"
@@ -269,24 +303,34 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/contentrecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="1400dp"
+                    android:layout_height="1460dp"
                     android:overScrollMode="never"
                     android:nestedScrollingEnabled="false"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginTop="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/Today" />
 
                 <ImageButton
-                    android:id="@+id/btn_up1"
+                    android:id="@+id/btn_down2"
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginLeft="193dp"
                     android:background="#00000000"
-                    app:srcCompat="@drawable/ic_btn_arrow_up"
+                    app:srcCompat="@drawable/ic_btn_big_arrow_bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contentrecycler2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1460dp"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginLeft="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Today" />
 
 
             </LinearLayout>

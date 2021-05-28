@@ -15,26 +15,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zeroset.R;
+import com.example.zeroset.home.model.Content;
 import com.example.zeroset.login.ui.loginActivity;
+import com.example.zeroset.search.model.Shop;
 import com.example.zeroset.search.ui.adapter.SearchPagerAdapter;
+import com.example.zeroset.shop.model.Product;
 import com.example.zeroset.shop.ui.shopDetailFragment;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+
 public class searchActivity extends AppCompatActivity {
-    private ViewPager viewPager;
+    ViewPager viewPager;
     private NestedScrollView nestedScrollView;
     private searchResulttotalFragment totalFragment;
     private searchResultcontentFragment contentFragment;
     private searchResultproductFragment productFragment;
     private searchResultshopFragment shopFragment;
     private com.example.zeroset.shop.ui.shopDetailFragment shopDetailFragment;
-    private TabLayout tabLayout;
+    TabLayout tabLayout;
     private TextView searchword;
     String searchtxt;
     private ImageButton btn_back, btn_search;
     private TabItem total, product, shop, content;
     private TabLayout searchtab;
+    ArrayList<Shop> Shops;
+    ArrayList<Product> Products, Productshops; //db에서 product list 액티비티로 가져옴 각 프래그먼트에서 이거 참조
+    ArrayList<Content> Contents, Contents2;
 
 
 
@@ -53,7 +61,6 @@ public class searchActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("상점"));
         tabLayout.addTab(tabLayout.newTab().setText("콘텐츠"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
 
 
 
@@ -83,6 +90,8 @@ public class searchActivity extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout
                 .TabLayoutOnPageChangeListener(tabLayout));
+
+        setDummyData();
 
 
 
@@ -150,5 +159,41 @@ public class searchActivity extends AppCompatActivity {
         this.startActivity(i);
     }
 
+    public void setDummyData() {
+
+        Products = new ArrayList<>();
+        for (int i = 0; i < 23; i++) {
+            Products.add(new Product("공집합", "원주대나무", "20,000"));
+        }
+
+        Productshops = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Productshops.add(new Product("클린티", "원주대나무", "20,000"));
+        }
+
+        Contents = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", true,true,true));
+        }
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,false,true));
+
+        Contents2 = new ArrayList<>();
+        Contents2.add(new Content("시험기간\n이네요!", "그게뭐죠", "메인메인메인", true,true,true));
+        Contents2.add(new Content("클린티\n참멋지다!", "그게뭐죠", "메인메인메인", true,true,true));
+        Contents2.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", true,false,false));
+        Contents2.add(new Content("잘들어가나확인", "그게뭐죠", "메인메인메인", false,false,true));
+        Contents2.add(new Content("만약 안되면 어떡하지", "그게뭐죠", "메인메인메인", true,true,true));
+        Contents2.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,true,true));
+
+        Shops = new ArrayList<>();
+        Shops.add(new Shop("시험기간","성북구 어딘가","그게뭐죠",Productshops));
+        Shops.add(new Shop("시험기간","양주시","그게뭐죠", Productshops));
+        Shops.add(new Shop("시험기간","그렇다","그게뭐죠", Productshops));
+        Shops.add(new Shop("간식","덕정동","그게뭐죠", Productshops));
+        Shops.add(new Shop("비온다","성북구 어딘가","그게뭐죠", Productshops));
+        Shops.add(new Shop("시험기간","성북구 어딘가","그게뭐죠", Productshops));
+
+
+    }
 
 }

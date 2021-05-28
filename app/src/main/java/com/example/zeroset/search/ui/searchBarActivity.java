@@ -63,6 +63,19 @@ public class searchBarActivity extends AppCompatActivity {
         KeywordAdapter keywordadapter = new KeywordAdapter();
         settinkeywordList(keywordadapter);
         keywordlistv.setAdapter(keywordadapter);
+        keywordadapter.setOnItemClickListener(new KeywordAdapter.OnItemClickListener() {
+                                                  @Override
+                                                  public void onItemClick(View v, int position) {
+
+                                                      if (keywordadapter.section == true) {
+                                                          keywordlistv.setAdapter(keywordadapter);
+                                                      } else if (keywordadapter.section == false) {
+                                                          editSearch.setText(keywordadapter.keyword);
+                                                      }
+                                                  }
+                                              }
+
+            );
 
         ranklist = new ArrayList<String>();
         settingrankList();
@@ -231,14 +244,14 @@ public class searchBarActivity extends AppCompatActivity {
     private void settinkeywordList(KeywordAdapter k){
         //검색어 기록 내부 데이터 구성
         k.addItem(new Keyword("달걀"));
-        k.addItem(new Keyword("이채은"));
-        k.addItem(new Keyword("토마토마토"));
+        k.addItem(new Keyword("송원선"));
+        k.addItem(new Keyword("음음"));
         k.addItem(new Keyword("thdefn"));
         k.addItem(new Keyword("힘들어"));
         k.addItem(new Keyword("커피커피"));
-        k.addItem(new Keyword("달걀"));
-        k.addItem(new Keyword("달걀"));
-        k.addItem(new Keyword("달걀"));
+        k.addItem(new Keyword("맛있겠다"));
+        k.addItem(new Keyword("alal"));
+        k.addItem(new Keyword("햇님"));
 
     }
 

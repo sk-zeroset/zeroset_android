@@ -279,7 +279,6 @@
                         app:layout_constraintTop_toBottomOf="@id/recycle_badge_detail" />
 
 
-
                     <TextView
                         android:id="@+id/product_info"
                         android:layout_width="wrap_content"

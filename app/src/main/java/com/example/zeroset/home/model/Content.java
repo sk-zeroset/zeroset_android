@@ -4,22 +4,40 @@ public class Content {
     private String title;
     private String imgURL;
     private String maintext;
-    private int type;
-
-    public Content(String title, String imgURL, String maintext, int type) {
+    private boolean recycle, social, eco;
+    public Content(String title, String imgURL, String maintext, boolean recycle, boolean social, boolean eco) {
         this.title = title;
         this.imgURL = imgURL;
         this.maintext = maintext;
-        this.type = type;
+        this.recycle = recycle;
+        this.social = social;
+        this.eco = eco;
     }
 
-    public int getType() {
-        return type;
+    public boolean isRecycle() {
+        return recycle;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setRecycle(boolean recycle) {
+        this.recycle = recycle;
     }
+
+    public boolean isSocial() {
+        return social;
+    }
+
+    public void setSocial(boolean social) {
+        this.social = social;
+    }
+
+    public boolean isEco() {
+        return eco;
+    }
+
+    public void setEco(boolean eco) {
+        this.eco = eco;
+    }
+
 
     public String getTitle() {
         return title;

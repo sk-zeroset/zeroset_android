@@ -20,7 +20,8 @@ public class ContentBannerAdapter extends RecyclerView.Adapter<ContentBannerAdap
     private ArrayList<Content> contents;
     private int type;
 
-    public ContentBannerAdapter(ArrayList<Content> contents, int type) {
+
+    public ContentBannerAdapter(ArrayList<Content> contents, int type ) {
         this.contents = contents;
         this.type = type;
     }
@@ -47,6 +48,17 @@ public class ContentBannerAdapter extends RecyclerView.Adapter<ContentBannerAdap
             holder.title2.setVisibility(View.VISIBLE);
             holder.title2.setText(content.getTitle());
         }
+
+        if(content.isEco()==false){
+            holder.eco.setVisibility(View.GONE);
+        }
+        if(content.isSocial()==false){
+            holder.social.setVisibility(View.GONE);
+        }
+        if(content.isRecycle()==false){
+            holder.recycle.setVisibility(View.GONE);
+        }
+
         Glide.with(holder.itemView.getContext()).load(content.getImgURL()).into(holder.img);
 
     }
@@ -60,6 +72,7 @@ public class ContentBannerAdapter extends RecyclerView.Adapter<ContentBannerAdap
     public class viewHolder extends RecyclerView.ViewHolder {
         public ImageView img, img2;
         public TextView title, title2;
+        public ImageView social, eco, recycle;
 
         public viewHolder(View itemView) {
             super(itemView);
@@ -68,6 +81,10 @@ public class ContentBannerAdapter extends RecyclerView.Adapter<ContentBannerAdap
             img2 = itemView.findViewById(R.id.contentimage2);
             title = itemView.findViewById(R.id.title);
             title2 = itemView.findViewById(R.id.title2);
+            social = itemView.findViewById(R.id.social);
+            eco = itemView.findViewById(R.id.eco);
+            recycle = itemView.findViewById(R.id.recycle);
+
 
         }
 
