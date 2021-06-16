@@ -1,31 +1,31 @@
 package com.example.zeroset.home.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.zeroset.MainActivity;
 import com.example.zeroset.R;
 import com.example.zeroset.home.model.Content;
 import com.example.zeroset.home.ui.adapter.ContentBannerAdapter;
-import com.example.zeroset.search.ui.searchFragment;
+import com.example.zeroset.search.ui.searchBarActivity;
 import com.example.zeroset.shop.model.Product;
-import com.example.zeroset.search.ui.searchFragment;
-import com.example.zeroset.shop.model.eventBanner;
-import com.example.zeroset.shop.ui.adapter.GridAdapter;
-import com.example.zeroset.shop.ui.adapter.EventBannerAdapter;
+import com.example.zeroset.shop.ui.intoCategory1Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.tabs.TabLayout;
 import com.example.zeroset.home.ui.adapter.LinearAdapter;
 
 import java.util.ArrayList;
@@ -39,15 +39,16 @@ public class homeFragment extends Fragment {
 
     private ImageButton btn_search, btn_down1, btn_up;
     private int MAX_ITEM_COUNT = 10;
-    private RecyclerView recycler1, recycler2, recycler3, recyclercontents;
+    private RecyclerView recycler1, recycler2, recycler3, recyclercontents, recyclercontents2;
     private TextView txt1, txt2, txt3;
     private LinearAdapter linearAdapter;
     private LinearLayout contentframe;
-    private ContentBannerAdapter contentAdapter;
+    private ContentBannerAdapter contentAdapter1, contentAdapter2;
     private ArrayList<Product> Products1, Products2, Products3;
-    private ArrayList<Content> Contents;
+    private ArrayList<Content> Contents, Contents1, Contents2;
     private MaterialToolbar bar;
     private ViewGroup view;
+    private View banner;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -97,12 +98,21 @@ public class homeFragment extends Fragment {
         ViewGroup v = (ViewGroup) inflater.inflate(R.layout.fragment_home,
                 container, false);
         setDummyData();
+        Contents1 = new ArrayList<>();
+        Contents2 = new ArrayList<>();
+        Contents1.addAll(Contents.subList(0,5));
+        Contents2.addAll(Contents.subList(5,10));
+
         recycler1 = v.findViewById(R.id.firstrecycler);
         recycler2 = v.findViewById(R.id.secondrecycler);
         recycler3 = v.findViewById(R.id.thirdrecycler);
         recyclercontents = v.findViewById(R.id.contentrecycler);
         contentframe = v.findViewById(R.id.contentframe);
+        recyclercontents2 = v.findViewById(R.id.contentrecycler2);
+        banner = v.findViewById(R.id.mainview);
         //resizeContentList(contentframe,5, getActivity());
+
+        recyclercontents.setHasFixedSize(true);
 
         setRecyclerView(recycler1, Products1);
         setRecyclerView(recycler2, Products1);
@@ -110,25 +120,42 @@ public class homeFragment extends Fragment {
 
 
         recyclercontents.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
-        contentAdapter = new ContentBannerAdapter(Contents, 1);
-        recyclercontents.setAdapter(contentAdapter);
+        contentAdapter1 = new ContentBannerAdapter(Contents1, 1);
+        recyclercontents.setAdapter(contentAdapter1);
+
+        recyclercontents2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        contentAdapter2 = new ContentBannerAdapter(Contents2, 1);
+        recyclercontents2.setAdapter(contentAdapter2);
 
         btn_search = v.findViewById(R.id.btn_search);
         btn_down1 = v.findViewById(R.id.btn_down1);
-        btn_up = v.findViewById(R.id.btn_up1);
+        btn_up = v.findViewById(R.id.btn_down2);
 
 
+
+        banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity().getBaseContext(),
+                        eventBannerDetailActivity.class);
+                getActivity().startActivity(i);
+
+            }
+        });
 
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(searchFragment.newInstance());
+                Intent i = new Intent(getActivity().getBaseContext(),
+                        searchBarActivity.class);
+                getActivity().startActivity(i);
             }
         });
 
         btn_down1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btn_down1.setVisibility(View.GONE);
                 contentframe.setVisibility(View.VISIBLE);
             }
         });
@@ -137,7 +164,8 @@ public class homeFragment extends Fragment {
         btn_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                contentframe.setVisibility(View.GONE);
+                btn_up.setVisibility(View.GONE);
+                recyclercontents2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -152,9 +180,17 @@ public class homeFragment extends Fragment {
         }
 
         Contents = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", 1));
-        }
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", true, true,false));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,false,false));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", true,true,true));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,false,true));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,true,true));
+        Contents.add(new Content("더해지나", "그게뭐죠", "메인메인메인", true, true,false));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,false,false));
+        Contents.add(new Content("안더해지면\n어떡하지!", "그게뭐죠", "메인메인메인", true,true,true));
+        Contents.add(new Content("오마이갓", "그게뭐죠", "메인메인메인", false,false,true));
+        Contents.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,true,true));
+
     }
 
     public void setRecyclerView(RecyclerView recyclerView, ArrayList<Product> products) {

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".search.ui.searchBarActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,6 +107,8 @@
                 android:layout_marginLeft="8dp"
                 android:background="@null"
                 android:ems="10"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
                 android:fontFamily="@font/montserrat_regular"
                 android:hint="무엇을 찾으시나요?"
                 android:textColorHint="#AEAEB2"
