@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zeroset.MainActivity;
 import com.example.zeroset.R;
@@ -41,10 +42,12 @@ public class searchBarActivity extends AppCompatActivity {
     EditText editSearch;        // 검색어를 입력할 Input 창
     SearchAdapter adapter;      // 리스트뷰에 연결할 아답터
     ArrayList<String> arraylist, ranklist;
+    ArrayList<String> searchedlist;
     LinearLayout rank, keyword;
     RankAdapter adpaterrank;
     RecyclerView keywordlistv;
     String searchword;
+    int tabnum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class searchBarActivity extends AppCompatActivity {
         ranklistv = findViewById(R.id.ranklist); //랭킹차트
         keywordlistv = findViewById(R.id.keywordview); //최근검색어
 
+        searchedlist = new ArrayList<String>();
         StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(3, LinearLayoutManager.HORIZONTAL);
         keywordlistv.setLayoutManager(gridLayoutManager);
         KeywordAdapter keywordadapter = new KeywordAdapter();
@@ -142,7 +146,7 @@ public class searchBarActivity extends AppCompatActivity {
                 switch (actionId) {
                     case EditorInfo.IME_ACTION_SEARCH:
                         searchword = editSearch.getText().toString();
-                        sendData();
+                        sendData(keywordadapter);
                         break;
                     default:
                         // 기본 엔터키 동작
@@ -158,7 +162,7 @@ public class searchBarActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 searchword = datalist.get(position);
-                sendData();
+                sendData(keywordadapter);
 
             }
         });
@@ -168,7 +172,7 @@ public class searchBarActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 searchword = ranklist.get(position);
-                sendData();
+                sendData(keywordadapter);
 
             }
         });
@@ -178,7 +182,7 @@ public class searchBarActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 searchword = editSearch.getText().toString();
-                sendData();
+                sendData(keywordadapter);
 
             }
         });
@@ -243,20 +247,16 @@ public class searchBarActivity extends AppCompatActivity {
 
     private void settinkeywordList(KeywordAdapter k){
         //검색어 기록 내부 데이터 구성
-        k.addItem(new Keyword("달걀"));
-        k.addItem(new Keyword("송원선"));
-        k.addItem(new Keyword("음음"));
-        k.addItem(new Keyword("thdefn"));
-        k.addItem(new Keyword("힘들어"));
-        k.addItem(new Keyword("커피커피"));
-        k.addItem(new Keyword("맛있겠다"));
-        k.addItem(new Keyword("alal"));
-        k.addItem(new Keyword("햇님"));
+
+            k.addItem(new Keyword("키이워드"));
+
 
     }
 
-    private void sendData()
+    private void sendData(KeywordAdapter k)
     {
+
+        searchedlist.add(searchword);
         //서치결과뷰로 데이터 샌딩
         //INTENT OBJ
         Intent i = new Intent(this,
@@ -265,8 +265,10 @@ public class searchBarActivity extends AppCompatActivity {
         //PACK DATA
         i.putExtra("SENDER_KEY", "MyFragment");
         i.putExtra("SEARCHWORD_KEY", searchword);
+        i.putExtra("tabnum", tabnum);
 
 
         this.startActivity(i);
     }
+
 }
