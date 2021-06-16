@@ -129,7 +129,6 @@ public class searchActivity extends AppCompatActivity {
         if(sender != null)
         {
             this.receiveData();
-            Toast.makeText(this, "Received", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -143,10 +142,12 @@ public class searchActivity extends AppCompatActivity {
         //RECEIVE DATA VIA INTENT
         Intent i = getIntent();
         String word = i.getStringExtra("SEARCHWORD_KEY");
+        int tabnum = i.getIntExtra("tabnum",0);
 
         //SET DATA TO TEXTVIEWS
         searchword.setText(word);
         searchtxt = word ;
+        viewPager.setCurrentItem(tabnum);
     }
 
     private void sendData()
@@ -186,6 +187,12 @@ public class searchActivity extends AppCompatActivity {
         Contents2.add(new Content("원주대나무칫솔\n참멋지다!", "그게뭐죠", "메인메인메인", false,true,true));
 
         Shops = new ArrayList<>();
+        Shops.add(new Shop("시험기간","성북구 어딘가","그게뭐죠",Productshops));
+        Shops.add(new Shop("시험기간","양주시","그게뭐죠", Productshops));
+        Shops.add(new Shop("시험기간","그렇다","그게뭐죠", Productshops));
+        Shops.add(new Shop("간식","덕정동","그게뭐죠", Productshops));
+        Shops.add(new Shop("비온다","성북구 어딘가","그게뭐죠", Productshops));
+        Shops.add(new Shop("시험기간","성북구 어딘가","그게뭐죠", Productshops));
         Shops.add(new Shop("시험기간","성북구 어딘가","그게뭐죠",Productshops));
         Shops.add(new Shop("시험기간","양주시","그게뭐죠", Productshops));
         Shops.add(new Shop("시험기간","그렇다","그게뭐죠", Productshops));
