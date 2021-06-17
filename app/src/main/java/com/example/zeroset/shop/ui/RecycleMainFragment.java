@@ -171,7 +171,7 @@ public class RecycleMainFragment extends Fragment {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).replaceFragment(shopFragment.newInstance());
+                ((MainActivity) getActivity()).replaceFragment(ShopFragment.newInstance());
             }
         });
         return v;

@@ -3,18 +3,13 @@ package com.example.zeroset.home.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,7 +19,6 @@ import com.example.zeroset.home.model.Content;
 import com.example.zeroset.home.ui.adapter.ContentBannerAdapter;
 import com.example.zeroset.search.ui.searchBarActivity;
 import com.example.zeroset.shop.model.Product;
-import com.example.zeroset.shop.ui.intoCategory1Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.example.zeroset.home.ui.adapter.LinearAdapter;
 
