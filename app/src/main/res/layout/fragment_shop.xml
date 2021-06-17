@@ -1,463 +1,431 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".shop.ui.shopFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="activity"
+            type="com.example.zeroset.shop.ui.ShopFragment" />
+    </data>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".shop.ui.ShopFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/const1"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_weight="1">
 
-            <ImageButton
-                android:id="@+id/btn_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginRight="23dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintEnd_toStartOf="@id/btn_cart"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/btn_search" />
-
-            <ImageButton
-                android:id="@+id/btn_cart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginRight="24dp"
-                android:background="@android:color/transparent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/const1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/btn_search"
-                app:srcCompat="@drawable/btn_cart" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:text="카테고리"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_cart" />
-
-            <TextView
-                android:id="@+id/cate1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="생활"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintLeft_toLeftOf="@id/category"
-                app:layout_constraintTop_toBottomOf="@id/category" />
-
-            <ImageButton
-                android:id="@+id/btn_next1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate1"
-                app:layout_constraintStart_toStartOf="@+id/cate1"
-                app:layout_constraintTop_toTopOf="@id/cate1"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="주방"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintLeft_toLeftOf="@id/category"
-                app:layout_constraintTop_toBottomOf="@id/cate1" />
-
-            <ImageButton
-                android:id="@+id/btn_next2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate2"
-                app:layout_constraintStart_toStartOf="@+id/cate2"
-                app:layout_constraintTop_toTopOf="@id/cate2"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="뷰티"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintLeft_toLeftOf="@id/category"
-                app:layout_constraintTop_toBottomOf="@id/cate2" />
-
-            <ImageButton
-                android:id="@+id/btn_next3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate3"
-                app:layout_constraintStart_toStartOf="@+id/cate3"
-                app:layout_constraintTop_toTopOf="@id/cate3"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate4"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="인테리어"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintLeft_toLeftOf="@id/category"
-                app:layout_constraintTop_toBottomOf="@id/cate3" />
-
-            <ImageButton
-                android:id="@+id/btn_next4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate4"
-                app:layout_constraintStart_toStartOf="@+id/cate4"
-                app:layout_constraintTop_toTopOf="@id/cate4"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate5"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="욕실"
-                android:textSize="16dp"
-                android:textColor="@color/black"
-                app:layout_constraintLeft_toRightOf="@id/btn_next1"
-                app:layout_constraintTop_toTopOf="@id/cate1" />
-
-            <ImageButton
-                android:id="@+id/btn_next5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate5"
-                app:layout_constraintStart_toStartOf="@+id/cate5"
-                app:layout_constraintTop_toTopOf="@id/cate5"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate6"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="패션"
-                android:textSize="16dp"
-                android:textColor="@color/black"
-                app:layout_constraintLeft_toRightOf="@id/btn_next2"
-                app:layout_constraintTop_toTopOf="@id/cate2" />
-
-            <ImageButton
-                android:id="@+id/btn_next6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate6"
-                app:layout_constraintStart_toStartOf="@+id/cate6"
-                app:layout_constraintTop_toTopOf="@id/cate6"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate7"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="문구/도서"
-                android:textSize="16dp"
-                android:textColor="@color/black"
-                app:layout_constraintLeft_toRightOf="@id/btn_next3"
-                app:layout_constraintTop_toTopOf="@id/cate3" />
-
-            <ImageButton
-                android:id="@+id/btn_next7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="110dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate7"
-                app:layout_constraintRight_toRightOf="@id/btn_next6"
-                app:layout_constraintTop_toTopOf="@id/cate7"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/cate8"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="기타"
-                android:textSize="16dp"
-                android:textColor="@color/black"
-                app:layout_constraintLeft_toRightOf="@id/btn_next4"
-                app:layout_constraintTop_toTopOf="@id/cate4" />
-
-            <ImageButton
-                android:id="@+id/btn_next8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/cate8"
-                app:layout_constraintStart_toStartOf="@+id/cate8"
-                app:layout_constraintTop_toTopOf="@id/cate8"
-                app:srcCompat="@drawable/btn_next" />
-
-            <TextView
-                android:id="@+id/pick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="공집합 PICK!"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                app:layout_constraintLeft_toLeftOf="@id/category"
-                app:layout_constraintTop_toBottomOf="@id/cate4" />
-
-            <ImageButton
-                android:id="@+id/btn_add_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="24dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@+id/pick"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/pick"
-                app:srcCompat="@drawable/btn_rightpoint" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/eventBannerRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="10dp"
-                android:scrollbars="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/pick"
-                />
-
-
-            <TextView
-                android:id="@+id/best"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="공집합 BEST"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                app:layout_constraintStart_toStartOf="@+id/pick"
-                app:layout_constraintTop_toBottomOf="@id/eventBannerRecyclerView" />
-
-            <ImageButton
-                android:id="@+id/btn_add_next2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/best"
-                app:layout_constraintRight_toRightOf="@id/btn_add_next"
-                app:layout_constraintTop_toTopOf="@id/best"
-                app:srcCompat="@drawable/btn_rightpoint" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/best"
-                app:tabIndicatorHeight="4px"
-                app:tabMode="scrollable"
-                app:tabTextAppearance="@style/tab_text"
-                tools:ignore="MissingConstraints">
-                <!-- tabmode : 스크롤 가능하게끔 -->
-
-                <com.google.android.material.tabs.TabItem
+                <ImageButton
+                    android:id="@+id/btn_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="생활" />
+                    android:layout_marginLeft="320dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginRight="23dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_cart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/btn_search" />
 
-                <com.google.android.material.tabs.TabItem
+                <ImageButton
+                    android:id="@+id/btn_cart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="주방" />
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/btn_search"
+                    app:srcCompat="@drawable/btn_cart" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="뷰티" />
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="24dp"
+                    android:text="카테고리"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_cart" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/cate1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="생활"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="@id/category"
+                    app:layout_constraintTop_toBottomOf="@id/category" />
+
+                <ImageButton
+                    android:id="@+id/btn_next1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="인테리어" />
+                    android:layout_marginLeft="140dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate1"
+                    app:layout_constraintStart_toStartOf="@+id/cate1"
+                    app:layout_constraintTop_toTopOf="@id/cate1"
+                    app:srcCompat="@drawable/btn_next" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/cate2"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="주방"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="@id/category"
+                    app:layout_constraintTop_toBottomOf="@id/cate1" />
+
+                <ImageButton
+                    android:id="@+id/btn_next2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="욕실" />
+                    android:layout_marginLeft="140dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate2"
+                    app:layout_constraintStart_toStartOf="@+id/cate2"
+                    app:layout_constraintTop_toTopOf="@id/cate2"
+                    app:srcCompat="@drawable/btn_next" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/cate3"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="문구/도서"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toLeftOf="@id/category"
+                    app:layout_constraintTop_toBottomOf="@id/cate2" />
+
+                <ImageButton
+                    android:id="@+id/btn_next3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="패션" />
+                    android:layout_marginLeft="140dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate3"
+                    app:layout_constraintStart_toStartOf="@+id/cate3"
+                    app:layout_constraintTop_toTopOf="@id/cate3"
+                    app:srcCompat="@drawable/btn_next" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/cate4"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="욕실"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toRightOf="@id/btn_next1"
+                    app:layout_constraintTop_toTopOf="@id/cate1" />
+
+                <ImageButton
+                    android:id="@+id/btn_next4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="문구/도서" />
+                    android:layout_marginLeft="140dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate4"
+                    app:layout_constraintStart_toStartOf="@+id/cate4"
+                    app:layout_constraintTop_toTopOf="@id/cate4"
+                    app:srcCompat="@drawable/btn_next" />
 
-                <com.google.android.material.tabs.TabItem
+                <TextView
+                    android:id="@+id/cate5"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="패션/뷰티"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toRightOf="@id/btn_next2"
+                    app:layout_constraintTop_toTopOf="@id/cate2" />
+
+                <ImageButton
+                    android:id="@+id/btn_next5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="기타" />
-            </com.google.android.material.tabs.TabLayout>
+                    android:layout_marginLeft="140dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate5"
+                    app:layout_constraintStart_toStartOf="@+id/cate5"
+                    app:layout_constraintTop_toTopOf="@id/cate5"
+                    app:srcCompat="@drawable/btn_next" />
+
+                <TextView
+                    android:id="@+id/cate6"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="기타"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintLeft_toRightOf="@id/btn_next3"
+                    app:layout_constraintTop_toTopOf="@id/cate3" />
+
+                <ImageButton
+                    android:id="@+id/btn_next7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/cate6"
+                    app:layout_constraintRight_toRightOf="@id/btn_next5"
+                    app:layout_constraintTop_toTopOf="@id/cate6"
+                    app:srcCompat="@drawable/btn_next" />
+
+                <TextView
+                    android:id="@+id/pick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="공집합 PICK!"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintLeft_toLeftOf="@id/category"
+                    app:layout_constraintTop_toBottomOf="@id/cate3" />
+
+                <ImageButton
+                    android:id="@+id/btn_add_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@+id/pick"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/pick"
+                    app:srcCompat="@drawable/btn_rightpoint" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/eventBannerRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/pick" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/bestRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tab_layout"
-                tools:layout_editor_absoluteX="0dp" />
+                <TextView
+                    android:id="@+id/best"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="공집합 BEST"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="@+id/pick"
+                    app:layout_constraintTop_toBottomOf="@id/eventBannerRecyclerView" />
 
-            <TextView
-                android:id="@+id/goods"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="공집합 뱃지별 상품"
-                android:textColor="@color/black"
-                android:textSize="24dp"
-                app:layout_constraintStart_toStartOf="@+id/best"
-                app:layout_constraintTop_toBottomOf="@id/bestRecyclerView" />
+                <TextView
+                    android:id="@+id/best_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="좋아요가 많은 순으로 매겼어요!"
+                    android:textColor="#AEAEB2"
+                    android:textSize="12dp"
+                    app:layout_constraintLeft_toLeftOf="@id/best"
+                    app:layout_constraintTop_toBottomOf="@id/best" />
 
-            <TextView
-                android:id="@+id/recycle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="#Recycle"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/goods"
-                app:layout_constraintTop_toBottomOf="@id/goods" />
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/best_text"
+                    app:tabIndicatorHeight="4px"
+                    app:tabMode="scrollable"
+                    app:tabTextAppearance="@style/tab_text"
+                    tools:ignore="MissingConstraints">
+                    <!-- tabmode : 스크롤 가능하게끔 -->
 
-            <ImageButton
-                android:id="@+id/re_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/recycle"
-                app:layout_constraintRight_toRightOf="@id/btn_add_next"
-                app:layout_constraintTop_toTopOf="@id/recycle"
-                app:srcCompat="@drawable/btn_rightpoint" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="생활" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycleRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:scrollbars="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/recycle" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="주방" />
 
-            <TextView
-                android:id="@+id/social"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="#Social"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/recycle"
-                app:layout_constraintTop_toBottomOf="@id/recycleRecyclerView" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="문구/도서" />
 
-            <ImageButton
-                android:id="@+id/re_next2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/social"
-                app:layout_constraintRight_toRightOf="@id/btn_add_next"
-                app:layout_constraintTop_toTopOf="@id/social"
-                app:srcCompat="@drawable/btn_rightpoint" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="욕실" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/socialRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:scrollbars="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/social" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="패션/뷰티" />
 
-            <TextView
-                android:id="@+id/eco"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat_regular"
-                android:text="#Eco-friend"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/social"
-                app:layout_constraintTop_toBottomOf="@id/socialRecyclerView" />
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="기타" />
 
-            <ImageButton
-                android:id="@+id/re_next3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintBottom_toBottomOf="@id/eco"
-                app:layout_constraintRight_toRightOf="@id/btn_add_next"
-                app:layout_constraintTop_toTopOf="@id/eco"
-                app:srcCompat="@drawable/btn_rightpoint" />
+                </com.google.android.material.tabs.TabLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ecoRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:scrollbars="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/eco" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bestRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tab_layout"
+                    tools:layout_editor_absoluteX="0dp" />
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/goods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="공집합 뱃지별 상품"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="@+id/best"
+                    app:layout_constraintTop_toBottomOf="@id/bestRecyclerView" />
+
+                <TextView
+                    android:id="@+id/goods_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="뱃지 별로 좋아요가 많은 순으로 매겼어요!"
+                    android:textColor="#AEAEB2"
+                    android:textSize="12dp"
+                    app:layout_constraintLeft_toLeftOf="@id/goods"
+                    app:layout_constraintTop_toBottomOf="@id/goods" />
+
+                <TextView
+                    android:id="@+id/recycle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="#Recycle"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/goods_text"
+                    app:layout_constraintTop_toBottomOf="@id/goods_text" />
+
+                <ImageButton
+                    android:id="@+id/re_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/recycle"
+                    app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                    app:layout_constraintTop_toTopOf="@id/recycle"
+                    app:srcCompat="@drawable/btn_rightpoint" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/recycle" />
+
+                <TextView
+                    android:id="@+id/social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="#Social"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/recycle"
+                    app:layout_constraintTop_toBottomOf="@id/recycleRecyclerView" />
+
+                <ImageButton
+                    android:id="@+id/re_next2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/social"
+                    app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                    app:layout_constraintTop_toTopOf="@id/social"
+                    app:srcCompat="@drawable/btn_rightpoint" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/socialRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/social" />
+
+                <TextView
+                    android:id="@+id/eco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="#Eco-friend"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/social"
+                    app:layout_constraintTop_toBottomOf="@id/socialRecyclerView" />
+
+                <ImageButton
+                    android:id="@+id/re_next3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintBottom_toBottomOf="@id/eco"
+                    app:layout_constraintRight_toRightOf="@id/btn_add_next"
+                    app:layout_constraintTop_toTopOf="@id/eco"
+                    app:srcCompat="@drawable/btn_rightpoint" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ecoRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/eco" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
