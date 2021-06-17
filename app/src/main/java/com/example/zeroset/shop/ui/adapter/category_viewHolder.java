@@ -10,6 +10,7 @@ import com.example.zeroset.R;
 
 public class category_viewHolder extends RecyclerView.ViewHolder {
 
+    public TextView best;
     public ImageView img;
     public TextView company;
     public TextView productName;
@@ -18,6 +19,7 @@ public class category_viewHolder extends RecyclerView.ViewHolder {
     public category_viewHolder(View itemView) {
         super(itemView);
 
+        best = itemView.findViewById(R.id.best_text);
         img = itemView.findViewById(R.id.productImage);
         company = itemView.findViewById(R.id.company);
         productName = itemView.findViewById(R.id.productName);

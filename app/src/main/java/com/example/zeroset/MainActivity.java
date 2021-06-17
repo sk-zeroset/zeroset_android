@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.zeroset.contents.ui.contentsFragment;
-import com.example.zeroset.shop.ui.shopFragment;
+import com.example.zeroset.shop.ui.ShopFragment;
 import com.example.zeroset.home.ui.homeFragment;
 import com.example.zeroset.mypage.ui.myPageFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 public class MainActivity extends AppCompatActivity {
 
     homeFragment homeFragment;
-    shopFragment detailFragment;
+    ShopFragment detailFragment;
     contentsFragment contentsFragment;
     myPageFragment myPageFragment;
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         homeFragment = new homeFragment();
-        detailFragment = new shopFragment();
+        detailFragment = new ShopFragment();
         contentsFragment = new contentsFragment();
         myPageFragment = new myPageFragment();
 
