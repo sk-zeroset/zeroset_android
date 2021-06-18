@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_user_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="userID"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="11dp"
+        android:layout_marginLeft="5.25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="생각했던 사용감과 같이 부드럽고 좋아요 :)"
+        android:textSize="12dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_id"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_user_id"/>
+
+    <LinearLayout
+        android:id="@+id/contents_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_user_id"
+        app:layout_constraintTop_toBottomOf="@id/tv_contents">
+
+        <TextView
+            android:id="@+id/tv_write_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="2021.01.24"
+            android:textColor="#AEAEB2"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_write_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="좋아요 1개"
+            android:textColor="#AEAEB2"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_comment_answer"
+            style="?android:borderlessButtonStyle"
+            android:layout_width="76dp"
+            android:layout_height="35dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="답글달기"
+            android:textColor="#AEAEB2"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_comment_like"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FFFFFF"
+        app:srcCompat="@drawable/btn_gray_heart_empty"
+        android:textSize="10dp"
+        app:layout_constraintTop_toTopOf="@id/contents_info"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_write_answer"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="답글 1개"
+        android:padding="0dp"
+        android:textColor="#5F9BFF"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/contents_info"
+        app:layout_constraintTop_toBottomOf="@id/contents_info"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <View
+        android:id="@+id/viewDivider1"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#F2F2F7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_write_answer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

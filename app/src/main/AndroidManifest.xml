@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zeroset">
+
         <activity android:name=".home.ui.eventBannerDetailActivity"></activity>
         <activity android:name=".search.ui.searchBarActivity" />
         <activity android:name=".search.ui.searchActivity" />
@@ -20,6 +21,9 @@
         <activity
             android:name=".login.ui.loginActivity"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".contents.ui.ContentsCommentsActivity"></activity>
+
         <activity android:name=".shop.ui.detailActivity" />
         <activity
             android:name=".MainActivity"
@@ -30,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".contents.ui.ContentsDetailActivity" />
     </application>
 
 </manifest>
