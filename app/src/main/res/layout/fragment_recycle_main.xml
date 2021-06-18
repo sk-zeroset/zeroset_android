@@ -43,7 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@android:color/transparent"
+                android:background="@drawable/shadow"
+                android:scaleType="center"
                 app:layout_constraintLeft_toLeftOf="@id/btn_back"
                 app:layout_constraintTop_toBottomOf="@+id/btn_back"
                 app:srcCompat="@drawable/irecycle_badge" />
@@ -68,7 +69,7 @@
                 android:background="@android:color/transparent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/recycle_text1"
-                app:srcCompat="@drawable/btn_downpoint" />
+                app:srcCompat="@drawable/btn_arrow_down" />
 
             <TextView
                 android:id="@+id/recycle_des"
